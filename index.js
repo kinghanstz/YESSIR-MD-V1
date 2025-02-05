@@ -824,15 +824,15 @@ ${metadata.desc}`;
                 console.log("Andbad is Online 🕸\n\n");
                 //chargement des commandes 
                 console.log("Loading Commands ...\n");
-                fs.readdirSync(__dirname + "/Andbad_cmds").forEach((fichier) => {
+                fs.readdirSync(__dirname + "/commandes").forEach((fichier) => {
                     if (path.extname(fichier).toLowerCase() == (".js")) {
                         try {
-                            require(__dirname + "/Andbad_cmds/" + fichier);
+                            require(__dirname + "/commandes/" + fichier);
                             console.log(fichier + " installed ✔️");
                         }
                         catch (e) {
                             console.log(`${fichier} n'a pas pu être chargé pour les raisons suivantes : ${e}`);
-                        } /* require(__dirname + "/Andbad_cmds/" + fichier);
+                        } /* require(__dirname + "/commandes/" + fichier);
                          console.log(fichier + " installed ✔️")*/
                         (0, baileys_1.delay)(300);
                     }
